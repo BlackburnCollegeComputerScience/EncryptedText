@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">test_app</string>
+    <string name="hello_user">Hello user!</string>
+    <string name="action_settings">Settings</string>
+    <string name="listener_worked">It works!</string>
+    <string name="buttonText">Click this...</string>
+
+</resources>
