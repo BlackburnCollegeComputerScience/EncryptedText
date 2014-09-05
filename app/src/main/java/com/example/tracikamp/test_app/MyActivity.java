@@ -1,33 +1,34 @@
 package com.example.tracikamp.test_app;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 public class MyActivity extends Activity {
+
+    private Button clickButton;
+    private TextView onlyText;
+    private EditText edits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
-        final TextView onlyTextView = (TextView) findViewById(R.id.onlyText);
-        Button onlyButton = (Button) findViewById(R.id.button);
+        clickButton = (Button) findViewById(R.id.button);
+        onlyText = (TextView) findViewById(R.id.onlyText);
+        edits = (EditText) findViewById(R.id.editable1);
 
-        onlyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                onlyTextView.setText("It works!");
-                setTitle("It worked!");
-            }
-        });
-    }
+
+
+        }
+
 
 
     @Override
@@ -47,5 +48,13 @@ public class MyActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void buttonDoThis(View view) {
+        onlyText.setText("It works!");
+        setTitle("It worked!");
+        String uName = String.valueOf(edits.getText());
+        String youDid = "You did it " + uName + "!";
+        Toast.makeText(MyActivity.this, youDid,Toast.LENGTH_LONG).show();
     }
 }
